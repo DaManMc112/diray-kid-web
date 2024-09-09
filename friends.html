@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #4267B2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .friends-list {
+            max-width: 800px;
+            margin: 80px auto 20px auto; /* Adjust for fixed header */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .friend-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .friend-item:last-child {
+            border-bottom: none;
+        }
+
+        .friend-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #ddd;
+        }
+
+        .friend-item p {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .go-back {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 24px;
+            background-color: #4267B2;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: fit-content;
+        }
+
+        .go-back:hover {
+            background-color: #365899;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">Friends List</div>
+
+    <!-- Friends List Section -->
+    <div class="friends-list">
+        <div class="friend-item">
+            <img src="https://th.bing.com/th/id/OIP.tVmfBh5hwHhUikEwLEid4gHaSA?rs=1&pid=ImgDetMain" alt="Rowley Jefferson">
+            <p>Rowley Jefferson</p>
+        </div>
+        <div class="friend-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.lPgflXWTsS3mCAu4WjiFpQAAAA%26pid%3DApi&f=1&ipt=90f1baedb8c9d9ed260982d84dd85f4cec9062679335864fd80b87069e6f0d7d&ipo=images" alt="Jeremy">
+            <p>Jeremy Pindle</p>
+        </div>
+        <div class="friend-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.wikia.nocookie.net%2Fdoawk%2Fimages%2Fe%2Fe1%2FCharacter-_Alex_Aruda.jpg%2Frevision%2Flatest%3Fcb%3D20220317162137&f=1&nofb=1&ipt=c5af5894b5aacdde8a265f717964a088351bfe12e2740be649b20a5c9924d9b2&ipo=images" alt="Alex Aruda">
+            <p>Alex Aruda</p>
+        </div>
+        <div class="friend-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.wikia.nocookie.net%2Fdoawk%2Fimages%2F1%2F1a%2FOnline_character-_Larry_Ziegel.png%2Frevision%2Flatest%2Fscale-to-width-down%2F350%3Fcb%3D20220515233313&f=1&nofb=1&ipt=a7c301a8dc617bc8825d0009b8232ead319d9ac16285a598fe9db4085c9d28a9&ipo=images" alt="Christopher Ziegel">
+            <p>Christopher Ziegel</p>
+        </div>
+        <div class="friend-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fvignette1.wikia.nocookie.net%2Fdoawk%2Fimages%2Fb%2Fb1%2FFrank_Heffley.jpg%2Frevision%2Flatest%3Fcb%3D20120226004432&f=1&nofb=1&ipt=4b36d66370b8424728eb095150c7b7f74dae29dbbfecd89dbdb1cf8477bc0172&ipo=images" alt="Frank Heffley">
+            <p>Frank Heffley</p>
+        </div>
+        <div class="friend-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.wikia.nocookie.net%2Fdoawk%2Fimages%2F0%2F0a%2FOnline_character-_Ann_Heffley.png%2Frevision%2Flatest%2Fscale-to-width-down%2F228%3Fcb%3D20220607174223&f=1&nofb=1&ipt=8d4eb7e46fbd388453217f8877e57cdbe9e876d427fd148c751eab3e34a99700&ipo=images" alt="Ann Heffley">
+            <p>Ann Heffley</p>
+        </div>
+        <!-- More friends can go here -->
+    </div>
+
+    <!-- Go Back Button -->
+    <a href="profile.html" class="go-back">Go Back</a>
+
+</body>
+</html>
