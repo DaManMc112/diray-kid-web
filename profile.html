@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Profile Mockup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background-color: #4267B2;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        /* Profile section */
+        .profile {
+            max-width: 800px;
+            margin: 80px auto 20px auto; /* Adjust for fixed header */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .cover-photo {
+            width: 100%;
+            height: 200px;
+            background-color: lightgray;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            position: absolute;
+            top: 120px;
+            left: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-info {
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .friends, .about-me, .hometown, .relationships {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .friends a {
+            color: #4267B2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .friends a:hover {
+            text-decoration: underline;
+        }
+
+        .about-me p, .hometown p, .relationships p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        /* People you may know */
+        .people-you-may-know {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .people-you-may-know h3 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #1f1e1e;
+        }
+
+        .friend-suggestion {
+            display: inline-block;
+            width: 120px;
+            text-align: center;
+            margin-right: 15px;
+            margin-bottom: 20px;
+        }
+
+        .friend-suggestion img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+
+        .friend-suggestion p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .friend-suggestion button {
+            margin-top: 5px;
+            padding: 8px 12px;
+            background-color: #4267B2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .friend-suggestion button:hover {
+            background-color: #365899;
+        }
+
+        /* What's on your mind section */
+        .post-input {
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-input textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid lightgray;
+            resize: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Posts */
+        .posts {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .post {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .post-actions {
+            margin-top: 10px;
+        }
+
+        .post-actions button {
+            margin-right: 10px;
+            padding: 8px 16px;
+            background-color: #4267B2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .post-actions button:hover {
+            background-color: #365899;
+        }
+
+        .post-comment {
+            margin-top: 10px;
+            background-color: #f0f2f5;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid lightgray;
+            resize: none;
+            font-size: 14px;
+        }
+
+        .likes {
+            color: #4267B2;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .text-only {
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header" onclick="resetPage()">Facebook Profile</div>
+
+    <!-- Profile Section -->
+    <div class="profile">
+        <div class="cover-photo"></div>
+        <img class="profile-picture" src="https://th.bing.com/th/id/OIP.vtBAqnSbrWPUe9UbcbCkkAHaOi?rs=1&pid=ImgDetMain" alt="Profile Picture">
+        <div class="profile-info">
+            <h2>Greg Heffley</h2>
+            <p class="friends"><a href="friends.html">Friends</a></p> <!-- Link to friends page -->
+            <div class="about-me">
+                <p><strong>About me:</strong></p>
+                <p>Hi, I'm the middle child. I have one older brother and one younger brother. I like to play with my best friend Rowley Jefferson. I'm not the most popular kid at my school; I just tend to stay to myself.</p>
+            </div>
+            <div class="hometown">
+                <p><strong>Hometown:</strong> Plainview</p>
+            </div>
+            <div class="relationships">
+                <p><strong>Relationships:</strong> Single</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- People You May Know Section -->
+    <div class="people-you-may-know">
+        <h3>People You May Know</h3>
+        <div class="friend-suggestion">
+            <img src="https://th.bing.com/th/id/OIP.WFEutOWYtepOJBTjwRW--QHaGV?rs=1&pid=ImgDetMain" alt="Bob Delaney">
+            <p>Bob Delaney</p>
+            <button>Add Friend</button>
+        </div>
+        <div class="friend-suggestion">
+            <img src="https://th.bing.com/th/id/OIP.WFEutOWYtepOJBTjwRW--QHaGV?rs=1&pid=ImgDetMain" alt="Bill Walter">
+            <p>Bill Walter</p>
+            <button>Add Friend</button>
+        </div>
+        <!-- More friend suggestions can go here -->
+    </div>
+
+    <!-- What's on Your Mind Section -->
+    <div class="post-input">
+        <textarea rows="4" placeholder="What's on your mind?"></textarea>
+    </div>
+
+    <!-- Posts Section -->
+    <div class="posts">
+        <!-- Post 1 -->
+        <div class="post">
+            <p><b>Greg Heffley</b> posted: First day of school! <b>Rowley Jefferson</b>, see you there.</p>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ywcJMa8TafgHOVR1WpM_QgAAAA%26pid%3DApi&f=1&ipt=1408415fc9b40ee45d6ef8112f75839ba9258ced543091f113b78faa76d3fc29&ipo=images" alt="Post Image">
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">3 Likes</p>
+        </div>
+    
+        <!-- New Post 1 (Text Only) -->
+        <div class="post text-only">
+            <p><b>Greg Heffley</b> posted: Do you guys think I'm the 52nd or 53rd most popular in our school?</p>
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">2 Likes</p>
+        </div>
+    
+        <!-- Post 2 -->
+        <div class="post">
+            <p><b>Greg Heffley</b> posted: Oh no, Rodrick is picking me up today.</p>
+            <img src="https://wimpykidwiki.com/w/images/thumb/5/5c/Called_shotgun.jpg/180px-Called_shotgun.jpg" alt="Video game post">
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">7 Likes</p>
+        </div>
+    
+        <!-- New Post 2 (Text Only) -->
+        <div class="post text-only">
+            <p><b>Greg Heffley</b> posted: Do you guys think I should go outside today or play video games?</p>
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">6 Likes</p>
+        </div>
+    
+        <!-- Post 3 -->
+        <div class="post">
+            <p><b>Greg Heffley</b> posted: I DO NOT have the cheese touch, I gave it to <b>Jeremy Pindle</b>.</p>
+            <img src="https://static.wikia.nocookie.net/doawk/images/f/f9/Rodrick_Rules10-_Greg_gives_the_Cheese_Touch_to_Jeremy_Pindle.png" alt="Birthday post">
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">4 Likes</p>
+        </div>
+    
+        <!-- New Post 3 (Text Only) -->
+        <div class="post text-only">
+            <p><b>Greg Heffley</b> posted: Who has the cheese touch today?</p>
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">1 Like</p>
+        </div>
+    
+        <!-- Post 4 -->
+        <div class="post">
+            <p><b>Greg Heffley</b> posted: Hanging out with <b>Rowley Jefferson</b>.</p>
+            <img src="https://spark.adobe.com/page/76OVu/images/5010CC94-8B17-47E2-B796-BD54983EA133.png" alt="Hanging out with Rowley">
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">6 Likes</p>
+        </div>
+    
+        <!-- New Post 4 (Text Only) -->
+        <div class="post text-only">
+            <p><b>Greg Heffley</b> posted: Today I got partnered with Fregley in physical education class.</p>
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">3 Likes</p>
+        </div>
+    
+        <!-- Post 5 -->
+        <div class="post">
+            <p><b>Greg Heffley</b> posted: Does anyone else love when <b>Rowley Jefferson</b> tells his stories about when he was on vacation?</p>
+            <img src="https://coloringpagesonly.com/wp-content/uploads/2022/05/Greg-Heffley-Rowley-Jefferson.png" alt="Vacation post">
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">7 Likes</p>
+        </div>
+    
+        <!-- New Post 5 (Text Only) -->
+        <div class="post text-only">
+            <p><b>Greg Heffley</b> posted: Me and Rowley volunteered for the Safety Patrol!</p>
+            <div class="post-actions">
+                <button>Like</button>
+                <button>Comment</button>
+            </div>
+            <p class="likes">4 Likes</p>
+        </div>
+    </div>
+
+    <!-- JavaScript to reload the page when clicking the header -->
+    <script>
+        function resetPage() {
+            location.reload(); // This will reload the page
+        }
+    </script>
+
+</body>
+</html>
